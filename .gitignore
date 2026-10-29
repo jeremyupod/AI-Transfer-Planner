@@ -5,16 +5,27 @@
 
 # Python virtual environments and local configuration
 .venv/
+.venv*/
 venv/
 env/
 ENV/
 *.env
 .env
 .env.*
+.envrc
 !.env.example
+backend/.venv313/
 
 # Credentials, certificates, and API keys
 .aws/
+.ssh/
+.pgpass
+.netrc
+.git-credentials
+.npmrc
+.pypirc
+id_rsa
+id_ed25519
 credentials/
 secrets/
 *.pem
@@ -34,6 +45,11 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .coverage
+.coverage.*
+.cache/
+.tox/
+.nox/
+.hypothesis/
 coverage.xml
 htmlcov/
 
@@ -42,11 +58,28 @@ build/
 dist/
 *.egg-info/
 *.egg
+*.tsbuildinfo
+
+# Local database files, dumps, and private backups (Docker named volumes live outside Git)
+pgdata/
+postgres-data/
+db-data/
+backups/
+*.dump
+*.backup
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
 
 # Node.js and frontend build artifacts
 node_modules/
 frontend/dist/
 frontend/.vite/
+frontend/test-results/
+frontend/playwright-report/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
